@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en,ru">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Playfair+Display|Roboto:400,400i,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" href="Assets/CSS/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<title>Tajam</title>
+</head>
+<body>
+	
+	<!-- sprite -->
+
+	<svg style="display: none;">
+		<symbol id="play" viewBox="0 0 60 60">
+			<g><g>
+				<path d="M45.563,29.174l-22-15c-0.307-0.208-0.703-0.231-1.031-0.058C22.205,14.289,22,14.629,22,15v30   c0,0.371,0.205,0.711,0.533,0.884C22.679,45.962,22.84,46,23,46c0.197,0,0.394-0.059,0.563-0.174l22-15   C45.836,30.64,46,30.331,46,30S45.836,29.36,45.563,29.174z"/>
+				<path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30   S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+			</g></g>
+		</symbol>
+
+		<symbol id="facebook" viewBox="0 0 96.124 96.123">
+			<g>
+				<path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803
+				c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654
+				c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246
+				c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"/>
+			</g>
+		</symbol>
+
+		<symbol id="twitter" viewBox="0 0 512 512">
+			<g>
+				<path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+				c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+				c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+				c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+				c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+				c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+				C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+				C480.224,136.96,497.728,118.496,512,97.248z"/>
+			</g>
+		</symbol>
+
+		<symbol id="instagramm" viewBox="0 0 512 512">
+			<g>
+				<path d="M352,0H160C71.648,0,0,71.648,0,160v192c0,88.352,71.648,160,160,160h192c88.352,0,160-71.648,160-160V160
+				C512,71.648,440.352,0,352,0z M464,352c0,61.76-50.24,112-112,112H160c-61.76,0-112-50.24-112-112V160C48,98.24,98.24,48,160,48
+				h192c61.76,0,112,50.24,112,112V352z"/>
+			</g>
+			<g>
+				<path d="M256,128c-70.688,0-128,57.312-128,128s57.312,128,128,128s128-57.312,128-128S326.688,128,256,128z M256,336
+				c-44.096,0-80-35.904-80-80c0-44.128,35.904-80,80-80s80,35.872,80,80C336,300.096,300.096,336,256,336z"/>
+			</g>
+		</symbol>
+
+	</svg>
+
+	<!-- header -->
+
+	<header class="header" id="header">
+		<div class="container">
+			<div class="header_inner">
+				<div class="header_logo">
+					<img src="Assets/IMG/Icon/tajam_icon.png" alt="">
+				</div>
+				<div class="nav" id="nav">
+					<a class="nav_link" href="#" data-scroll="#intro">home</a>
+					<a class="nav_link" href="#" data-scroll="#about">about</a>
+					<a class="nav_link" href="#" data-scroll="#expertise">expertise</a>
+					<a class="nav_link" href="#" data-scroll="#team">teams</a>
+					<a class="nav_link" href="#" data-scroll="#works">works</a>
+					<a class="nav_link" href="#" data-scroll="#reviews">people say</a>
+					<a class="nav_link" href="#" data-scroll="#footer">contact</a>
+				</div>
+			</div>
+		</div> <!-- закрывающий контейнер -->
+	</header>
+
+	<!-- intro -->
+
+	<div class="intro" id="intro">
+		<div class="container">
+
+			<div class="slider_con">
+			<div class="intro_slider" id="introSlider">
+
+				<div class="intro_iner">
+					<div class="intro_title">We Are Awesome Creative Agency</div>
+					<div class="intro_text">Simple text.</div>		
+				</div>
+
+				<div class="intro_iner">
+					<div class="intro_title">А вот тут другой заголовок</div>
+					<div class="intro_text">Тут тоже.</div>		
+				</div>
+
+				<div class="intro_iner">
+					<div class="intro_title">Простите, фантазии нет</div>
+					<div class="intro_text">На что я трачу свою жизнь?</div>		
+				</div>
+
+				<div class="intro_iner">
+					<div class="intro_title">Помогите кто-нибудь!</div>
+					<div class="intro_text">Как отсюда выбраться?</div>		
+				</div>
+
+
+			</div>
+				<div class="intro_botton">
+					<a class="botton botton--one" href="#">LEARN MORE</a>
+				</div>
+			</div>
+
+	
+		</div>
+	</div>
+	
+	<!-- about -->
+
+	<div class="container">
+		<div class="about" id="about">
+			<div class="about_icon">
+				<img src="Assets/IMG/Icon/Tajam_icon_2.png" alt="">
+			</div>
+
+			<div class="about_cont">
+				<div class="about_title">OUR STORY</div>
+				<div class="about_text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</div>
+				<div class="about_text">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</div>
+			
+				<a class="botton botton--two" href="">LEARN MORE</a>
+			</div>
+		</div>
+	</div> <!-- закрывающий контейнер -->
+
+	<!-- Our story -->
+
+	<div class="story" id="story">
+		<div class="container">
+			<div class="story_content">
+					<a href="https://youtu.be/dQw4w9WgXcQ" target="blank">
+						<svg class="icon_play">
+							<use xlink:href="#play"></use>
+						</svg>
+						<div class="story_text">WATCH OUR STORY</div>
+					</a>
+			</div>
+		</div>
+	</div> <!-- закрывающий -->
+
+	<!-- expertise -->
+	
+	<div class="container">
+
+			<div class="expertise_header" id="expertise">
+				<div class="expertise_title">EXPERTISE</div>
+				<div class="expertise_text">Lorem ipsum dolor sit amet proin gravida nibh vel velit</div>
+			</div> <!-- конец шапки -->
+			
+		<div class="expertise">
+		
+			<div class="expertise_content content--border_1">
+				<img class="icon_content" src="Assets/IMG/Icon/1.png">
+				<h4 class="content_title">WEB DESIGN & DEVELOPMENT</h4>
+				<div class="content_text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</div>
+			</div>
+
+			<div class="expertise_content content--border_2">
+				<img class="icon_content" src="Assets/IMG/Icon/3.png">
+				<h4 class="content_title">BRANDING IDENTITY</h4>
+				<div class="content_text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</div>
+			</div>
+
+			<div class="expertise_content content--border_3">
+				<img class="icon_content" src="Assets/IMG/Icon/5.png">
+				<h4 class="content_title">MOBILE APP</h4>
+				<div class="content_text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</div>
+			</div>
+
+			<div class="expertise_content content--border_4">
+				<img class="icon_content" src="Assets/IMG/Icon/2.png">
+				<h4 class="content_title">SEARCH ENGINE OPTIMIZATION</h4>
+				<div class="content_text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</div>
+			</div>
+
+			<div class="expertise_content content--border_5">
+				<img class="icon_content" src="Assets/IMG/Icon/4.png">
+				<h4 class="content_title">GAME DEVELOPMENT</h4>
+				<div class="content_text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</div>
+			</div>
+
+			<div class="expertise_content content--border_6">
+				<img class="icon_content" src="Assets/IMG/Icon/6.png">
+				<h4 class="content_title">MADE WITH LOVE</h4>
+				<div class="content_text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</div>
+			</div>
+
+
+		</div>
+	</div> <!-- закрывающий -->
+
+	<!-- team -->
+
+	<div class="team" id="team">
+		<div class="container">
+
+				<div class="expertise_header header--team">
+					<div class="expertise_title title--team">MEET OUR AMAZING TEAM</div>
+					<div class="expertise_text">Lorem ipsum dolor sit amet proin gravida nibh vel velit</div>
+				</div> <!-- конец шапки -->
+				
+				<div class="team_inner">
+
+					<div class="team_item">
+						<img class="team_photo" src="Assets/IMG/team_1.jpg">
+						<div class="team_title">ROGAL DORN</div>
+						<div class="team_text">CEO & FOUNDER</div>	
+					</div>
+
+					<div class="team_item">
+						<img class="team_photo" src="Assets/IMG/team_2.jpg">
+						<div class="team_title">Sangvinius</div>
+						<div class="team_text">ENGINEERING</div>	
+					</div>
+
+					<div class="team_item">
+						<img class="team_photo" src="Assets/IMG/team_3.jpg">
+						<div class="team_title">Alfarius</div>
+						<div class="team_text">DESIGNER</div>	
+					</div>
+
+					<div class="team_item">
+						<img class="team_photo" src="Assets/IMG/team_4.jpg">
+						<div class="team_title">Corvus Koraks</div>
+						<div class="team_text">MARKETING</div>	
+					</div>
+				
+				</div>
+
+				<div class="team_footer">
+					<div class="join">Become part of our dream team, let’s join us !</div>
+					<a class="botton botton--three" href="#">WE ARE HIRING</a>
+				</div>	
+
+		</div> <!-- закрывающий контейнер -->
+	</div>	<!-- закрывающий -->
+
+	<!-- works -->
+
+	<div class="works" id="works">
+
+		<div class="works_left">
+			<div class="left_title">OUR WORKS
+			</div>
+			
+			<div class="works_main">
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_1.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_2.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_3.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_4.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_5.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_6.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="works_right">
+			<div class="right_title">See All Project in dribbble
+			</div>
+
+			<div class="works_main">
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_7.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_8.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_9.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_10.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_11.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+				<div class="works_item">
+					<img  class="works_photo" src="Assets/IMG/work_12.jpg" alt="">
+					<div class="works_content">
+						<div class="works_title">Project Name</div>
+						<div class="works_text">User Interface Design</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="works_botton">
+			<a class="botton botton--four" href="#">LOAD MORE</a>
+		</div>
+	</div> <!-- закрывающий -->
+
+	<!-- reviews -->
+
+	<div class="reviews" id="reviews">
+		<div class="container">
+			
+			<div class="reviews_title">“</div>
+
+			<div class="reviews_slider" id="reviewsSlider">
+
+				<div class="reviews_content">
+					<div class="reviews_text" >Что за хрень я написал? В теории, тут можно написать много всякого говна и оно будет норм, но это не точно, если эта параша перенесется на новую строчку - значит все норм. Класс. </div>
+					<div class="reviews_name">ROGAL DORN</div>
+					<div class="reviews_prof">CEO TENGKUREP</div>
+				</div>
+
+				<div class="reviews_content">
+					<div class="reviews_text">Я видел некоторое дерьмо.</div>
+					<div class="reviews_name">Sangvinius</div>
+					<div class="reviews_prof">CEO TENGKUREP</div>
+				</div>
+
+				<div class="reviews_content">
+					<div class="reviews_text">Тут написано что-то другое, а может и нет, никто не знает. Невермор кар кар.</div>
+					<div class="reviews_name">Corvus Koraks</div>
+					<div class="reviews_prof">CEO TENGKUREP</div>
+				</div>
+
+				<div class="reviews_content">
+					<div class="reviews_text">Я Альфарий! Суповары сосатб!</div>
+					<div class="reviews_name">Alfarius</div>
+					<div class="reviews_prof">CEO TENGKUREP</div>
+				</div>
+
+				<div class="reviews_content">
+					<div class="reviews_text">Я тоже Альфарий! Ха-ха многоходовочка, я Омегон.</div>
+					<div class="reviews_name">Omegon</div>
+					<div class="reviews_prof">CEO TENGKUREP</div>
+				</div>
+
+			</div>	
+
+			<div class="photo_con">
+
+				<div class="slick_prev">
+					<img src="Assets/IMG/Icon/prev.png">
+				</div>
+
+			<div class="photo_slider" id="photoSlider">
+				<div class="reviews_photo">
+					<img class="reviews_img" src="Assets/IMG/team_1.jpg">
+				</div>
+			
+				<div class="reviews_photo">
+					<img class="reviews_img" src="Assets/IMG/team_2.jpg">
+				</div>
+
+				<div class="reviews_photo">
+					<img class="reviews_img" src="Assets/IMG/team_4.jpg">
+				</div>
+
+				<div class="reviews_photo">
+					<img class="reviews_img" src="Assets/IMG/team_3.jpg">
+				</div>
+
+				<div class="reviews_photo">
+					<img class="reviews_img" src="Assets/IMG/team_3.jpg">
+				</div>
+			</div>
+
+				<div class="slick_next">
+					<img src="Assets/IMG/Icon/next.png">
+				</div>
+
+			</div>
+
+		</div><!-- закрывающий контейнер -->
+	</div><!-- закрывающий -->
+
+	<!-- clients -->
+
+	<div class="container">
+		<div class="clients" id="clients">
+			<div class="clients_left">
+				<div class="clients_title">GIVE US A GOOD NEWS</div>
+				<div class="clients_form">
+					<input type="text" name="name" placeholder="Name">
+					<input type="email" name="email" placeholder="Email">
+					<input type="text" placeholder="Subject">
+					<textarea placeholder="Your Message"></textarea>
+				</div>
+
+				<div class="works_botton">
+					<a class="botton botton--five" href="#">SUBMIT</a>
+				</div>
+
+			</div>
+
+			<div class="clients_right">
+				<div class="clients_title">OUR HAPPY CLIENT</div>
+				<div class="clients_logo">
+
+					<div class="logo_right">
+						<img class="clients_img" src="Assets/IMG/Clients/mango.png">
+						<img class="clients_img" src="Assets/IMG/Clients/gucci.png">
+						<img class="clients_img" src="Assets/IMG/Clients/nike.png">
+						<img class="clients_img" src="Assets/IMG/Clients/puma.png">
+						<img class="clients_img" src="Assets/IMG/Clients/bong.png">
+					</div>
+
+					<div class="logo_left">
+						<img class="clients_img" src="Assets/IMG/Clients/zara.png">
+						<img class="clients_img" src="Assets/IMG/Clients/newyork.png">
+						<img class="clients_img" src="Assets/IMG/Clients/calvin.png">
+						<img class="clients_img" src="Assets/IMG/Clients/converse.png">
+						<img class="clients_img" src="Assets/IMG/Clients/levis.png">
+					</div>
+					
+				</div>
+			</div>
+
+		</div><!-- закрывающий -->
+	</div><!-- закрывающий контейнер -->
+
+	<!-- footer -->
+	<footer class="footer" id="footer">
+		<div class="container">
+			<div class="footer_item">		
+				<div class="footer_block">
+
+						<div class="footer_icon">
+							<img src="Assets/IMG/Icon/tajam_icon.png">
+						</div>
+					
+						<div class="footer_text">
+							lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit
+						</div>
+
+					</div>
+					
+					<div class="footer_block">
+
+						<div class="footer_title">
+							OUR STUDIO
+						</div>
+						
+						<div class="footer_text">
+							<p><img class="icon_foot" src="Assets/IMG/Icon/map.png">
+							Ruko cucruk, Jl. Radio luar dalem jos 
+							No.12 - 13, Kalideres - Jakarta Barat
+							11480 - Indonesia</p>
+							<p><img class="icon_foot" src="Assets/IMG/Icon/phone.png">
+							(+62) 21-2224 3333</p>
+						</div>
+
+					</div>
+
+					<div class="footer_block">
+						<div class="footer_title">
+							STAY IN TOUCH
+						</div>
+						
+						<div class="footer_bot">
+							<a class="foot_nav" href="#">Subscribe our newsletter</a>
+							<img class="foot_icon" src="Assets/IMG/Icon/air.png">
+						</div>
+						
+						<div class="footer_social">
+
+							<a href="#" target="blank">
+							<svg class="icon_social">
+								<use xlink:href="#facebook"></use>
+							</svg>
+							</a>
+
+							<a href="#" target="blank">
+							<svg class="icon_social">
+								<use xlink:href="#twitter"></use>
+							</svg>
+							</a>
+
+							<a href="#" target="blank">
+							<svg class="icon_social">
+								<use xlink:href="#instagramm"></use>
+							</svg>
+							</a>
+
+							<a href="#" target="blank">
+							<svg class="icon_social">
+								<use xlink:href="#twitter"></use>
+							</svg>
+							</a>
+
+							<a href="#" target="blank">
+							<svg class="icon_social">
+								<use xlink:href="#facebook"></use>
+							</svg>
+							</a>
+
+							<a href="#" target="blank">
+							<svg class="icon_social">
+								<use xlink:href="#instagramm"></use>
+							</svg>
+							</a>
+
+						</div>	
+					</div>
+			</div>
+
+			<div class="footer_down">
+				<div class="down_1">                 
+					<p>HELP</p>
+				</div>
+
+				<div class="down_2">
+					<p>TERMS & CONDITION</p>
+				</div>
+
+				<div class="down_3">
+					<p>PRIVACY</p>
+				</div>
+
+				<div class="down_right">
+					Copyright © 2019 - Sobenkov Konstantin
+				</div>
+			</div>
+
+		</div><!-- закрывающий контейнер -->
+	</footer><!-- закрывающий -->
+
+<!-- JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="Assets/JS/script.js"></script>
+
+
+</body>
+</html>
